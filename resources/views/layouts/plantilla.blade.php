@@ -58,7 +58,15 @@
          
         <div class="element-slidebar-btn">
          <span><img  src="{{asset('img/rokrt.png')}}" alt="Product"></span>
-         <a href="{{route('producto.index')}}">Prodcutos</a>
+         <a href="{{route('producto.index')}}">Productos</a>
+        </div>
+       
+
+                <!-- Citas -->
+         
+        <div class="element-slidebar-btn">
+         <span><img  src="{{asset('img/rokrt.png')}}" alt="Citas"></span>
+         <a href="{{route('cita.index')}}">Citas</a>
         </div>
        
   

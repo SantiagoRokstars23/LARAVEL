@@ -48,22 +48,18 @@ class PdfController extends Controller
     // ----------------------------
     public function pdfCitas(Request $request)
     {
-        $query = Cita::select('id', 'fecha', 'hora', 'estado', 'mascota', 'cliente');
+        $query = Cita::select('id', 'fecha', 'hora', 'nombre_mascota', 'nombre_dueno');
 
         // Filtros opcionales
         if ($request->filled('fecha')) {
             $query->whereDate('fecha', $request->fecha);
         }
 
-        if ($request->filled('estado')) {
-            $query->where('estado', $request->estado);
-        }
-
         if ($request->filled('buscar')) {
             $buscar = $request->buscar;
             $query->where(function ($q) use ($buscar) {
-                $q->where('mascota', 'like', '%' . $buscar . '%')
-                  ->orWhere('cliente', 'like', '%' . $buscar . '%');
+                $q->where('nombre_mascota', 'like', '%' . $buscar . '%')
+                  ->orWhere('nombre_dueno', 'like', '%' . $buscar . '%');
             });
         }
 

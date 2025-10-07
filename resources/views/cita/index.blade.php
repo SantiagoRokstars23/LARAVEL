@@ -35,7 +35,7 @@
       </ul>
    </nav>
 
-   <table class="tabla">
+   <table class="tabla-productos">
       <thead>
          <tr>
             <th>ID</th>
@@ -59,12 +59,14 @@
             <td>{{ $cita->hora }}</td>
             <td>{{ ucfirst($cita->estado) }}</td>
             <td class="acciones">
-               <a href="{{ route('cita.show', $cita->id) }}" class="btn-ver">👁️</a>
-               <a href="{{ route('cita.edit', $cita->id) }}" class="btn-editar">✏️</a>
+               <a href="{{ route('cita.show', $cita->id) }}" class="btn-ver"><img src="img/view.png" alt=""></a>
+               <a href="{{ route('cita.edit', $cita->id) }}" class="btn-editar"><img src="img/edit.png" alt=""></a>
                <form action="{{ route('cita.destroy', $cita->id) }}" method="POST" style="display:inline">
                   @csrf
                   @method('DELETE')
-                  <button type="submit" class="btn-eliminar" onclick="return confirm('¿Seguro que deseas eliminar esta cita?')">🗑️</button>
+                  <button type="submit" class="btn-eliminar" onclick="return confirm('¿Seguro que deseas eliminar esta cita?')">
+                     <input type="image"src="img/delete.png"></input>
+                  </button>
                </form>
             </td>
          </tr>

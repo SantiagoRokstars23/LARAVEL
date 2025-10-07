@@ -62,6 +62,16 @@ class CitaController extends Controller
         return redirect()->route('cita.index')->with('success', 'Cita actualizada correctamente');
     }
 
+    public function show($id)
+    {
+        // Busca la cita por su ID
+        $cita = Cita::findOrFail($id);
+
+        // Retorna la vista y le pasa la cita encontrada
+        return view('cita.show', compact('cita'));
+    }
+
+
     /**
      * Eliminar cita
      */

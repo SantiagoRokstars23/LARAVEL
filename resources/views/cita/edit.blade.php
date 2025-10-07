@@ -39,18 +39,23 @@
         <textarea id="motivo" name="motivo" rows="4">{{ $cita->motivo }}</textarea>
       </div>
 
-      <!-- Campo Veterinario -->
+            <!-- Campo Veterinario -->
       <div class="form-group">
         <label for="veterinario">Veterinario Asignado</label>
         <select name="veterinario" id="veterinario" required>
           <option value="{{ $cita->veterinario }}" selected>
             {{ $cita->veterinario ?? 'Sin asignar' }}
           </option>
-          @foreach($categorias as $cat)
-            <option value="{{ $cat->id }}">{{ $cat->nombre }}</option>
-          @endforeach
+      
+            <option value="Santiago grueso">Santiago grueso</option>
+            <option value="Andres carvajal">Andres carvajal</option>
+            <option value="Jhon carvajal">Jhon carvajal</option>
+            <option value="Luis jimenez">Luis jimenez</option>
+     
         </select>
       </div>
+
+
 
       <!-- Botón Guardar -->
       <div class="form-group">
